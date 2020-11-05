@@ -3,19 +3,21 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     lists: [],
-    isVisible: false
   },
   mutations: {
     addNewList(state, newList) {
       state.lists.push(newList);
     },
-    addSublist(state) {
-      state.isVisible = true;
+    removeList(index) {
+      this.lists.value.splice(index, 1);
     }
   },
   actions: {
     addNewList({ commit }, newList) {
       commit("addNewList", newList);
+    },
+    removeList({ commit }, index) {
+      commit("addNewList", index);
     }
   },
   getters: {

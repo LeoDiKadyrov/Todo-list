@@ -1,8 +1,8 @@
 <template>
     <div class="list">
         <div class="w">
-            <div class="list__listings" v-for="list in GET_LIST" :key="list.id">
-                <router-link to="{ name: 'list', params: { listId: list.id }}" @click="addSublist" class="list__item">{{ list.content }}</router-link>
+            <div class="list__listings" v-for="(list, index) in GET_LIST" :key="list.id">
+              <span id="list-remove" @click="removeList(index)">[x]</span>  <router-link to="{ '/list/' + list.id }" v-bind="to" class="list__item" append>{{ list.content }}</router-link>
             </div>
         </div>
 
@@ -16,15 +16,11 @@
 
 <script>
 import { mapGetters } from "vuex";
-//import Sublist from "./Sublist.vue"
 export default {
     data() {
         return {
             newList: '',
         }
-    },
-    components: {
-        //Sublist
     },
     computed: {
         ...mapGetters([
@@ -48,9 +44,16 @@ export default {
                 this.addNewList();
             }
         },
-        addSublist() {
-
+        removeList(index) {
+            this.$store.dispatch("removeList", index)
         }
     }
 }
 </script>
+
+/* to-do
+1. fix the bug with unique id in url
+2. fix the bug with removing the list
+3. make creation of subtasks possible
+4. make the logic of emergency checkbox
+ */
