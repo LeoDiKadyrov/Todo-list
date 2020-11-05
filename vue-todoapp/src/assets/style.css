@@ -1,0 +1,76 @@
+body {
+    background-color: #333;
+    font-style: italic;
+}
+
+.app__title {
+    text-align: center;
+}
+
+#app-wrapper {
+    margin-left: 25%;
+}
+
+/* Sublist */
+
+.sublist {
+    background-color: ivory;
+    margin-left: 25%;
+    text-align: center;
+    background-color: ivory;
+    padding: 100px 0px 100px 0px; 
+}
+
+#sublist-input {
+    min-width: 50%;
+}
+
+/* List */
+
+.list {
+    max-width: 300px;
+    text-align: center;
+    border-right: #333 3px solid;
+    background-color: ivory;
+    padding: 100px 0px 100px 0px; 
+    position: absolute;
+}
+
+.w {
+    position: relative;
+    bottom: 100px;
+}
+
+/* List creation */
+
+.list__create {
+    position: relative;
+    top: 100px;
+}
+
+#add-button {
+    min-width: 150px;
+    min-height: 35px;
+    margin: 10px auto;
+    border: 2px solid;
+    border-radius: 10px;
+    font-family: fantasy;
+}
+
+#add-input {
+    min-width: 200px;
+    border: 2px solid;
+    border-radius: 10px;
+    font-family: monospace;
+}
+
+.list__item {
+    width: 100%;
+    background-color: lawngreen;
+    font-family: monospace;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid yellowgreen;
+}
