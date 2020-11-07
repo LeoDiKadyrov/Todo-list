@@ -1,8 +1,9 @@
 <template>
     <div class="list">
         <div class="w">
-            <div class="list__listings" v-for="(list, index) in GET_LIST" :key="list.id">
-              <span id="list-remove" @click="removeList(index)">[x]</span>  <router-link to="{ '/list/' + list.id }" v-bind="to" class="list__item" append>{{ list.content }}</router-link>
+            <div class="list__listings" @click="$store.commit('chooseIndex', index)" v-for="(list, index) in GET_LIST" :key="index">
+              <span id="list-remove" @click="removeList(index)">[x]</span>  
+              <router-link to="/sublist" v-bind="to" class="list__item">{{ list.content }}</router-link>
             </div>
         </div>
 
@@ -24,15 +25,16 @@ export default {
     },
     computed: {
         ...mapGetters([
-            "GET_LIST"
+            "GET_LIST",
+            "GET_INDEX"
         ])
     },
     methods: {
         addNewList() {
             const newList = {
-                id: Date.now(),
                 done: false,
-                content: this.newList
+                content: this.newList,
+                subtask: []
             }
             if (newList.content) {
                 this.$store.dispatch("addNewList", newList)
@@ -45,15 +47,16 @@ export default {
             }
         },
         removeList(index) {
-            this.$store.dispatch("removeList", index)
+            this.$store.dispatch("removeList", index);
         }
     }
 }
 </script>
 
 /* to-do
-1. fix the bug with unique id in url
-2. fix the bug with removing the list
-3. make creation of subtasks possible
-4. make the logic of emergency checkbox
+1. messagebox when create and delete the tasks
+2. if user doesn't wanna delete (clicks cancel on messagebox), send him on home page
+3. filter for lists (done, undone)
+4. talk to backender
+5. styles 
  */

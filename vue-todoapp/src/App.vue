@@ -1,16 +1,11 @@
 <template>
-<h1 class="app__title">Todo App</h1>
+<h1 class="app__title">Todo App <router-link to="/">(На главную?)</router-link></h1>
   <div id="app-wrapper">
-    <List></List>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import "./assets/style.css"
-import List from "./components/List.vue"
-export default {
-  components: {
-    List,
-  }
-}
+export default {}
 </script>

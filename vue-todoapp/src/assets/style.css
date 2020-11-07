@@ -7,33 +7,49 @@ body {
     text-align: center;
 }
 
-#app-wrapper {
-    margin-left: 25%;
-}
-
 /* Sublist */
 
 .sublist {
     background-color: ivory;
-    margin-left: 25%;
     text-align: center;
+    margin: 0 auto;
     background-color: ivory;
     padding: 100px 0px 100px 0px; 
+    max-width: 400px;
+}
+
+.sublist__create {
+    display: flex;
+    justify-content: space-between;
+    word-break: break-all;
+}
+
+.sublist__done {
+    background-color: lightseagreen;
 }
 
 #sublist-input {
-    min-width: 50%;
+    min-width: 75%;
+    margin-bottom: 5px;
+}
+
+#sublist-button {
+    margin-left: 5px;
+}
+
+.emergency {
+    border: red 2px solid;
 }
 
 /* List */
 
 .list {
     max-width: 300px;
+    margin: 0 auto;
     text-align: center;
     border-right: #333 3px solid;
     background-color: ivory;
     padding: 100px 0px 100px 0px; 
-    position: absolute;
 }
 
 .w {

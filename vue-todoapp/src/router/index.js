@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Sublist from "../components/Sublist.vue"
+import List from "../components/List.vue"
 
 const routes = [
   {
-    path: "/:id",
+    path: "/sublist",
     name: "Sublist",
     component: Sublist
+  },
+  {
+    path: "/",
+    name: "home",
+    component: List
   }
 ]
 
