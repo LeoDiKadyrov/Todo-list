@@ -1,6 +1,7 @@
 body {
-    background-color: #333;
-    font-style: italic;
+    background-image: linear-gradient(120deg, #f6d365, #fda085);
+    font-family: 'Roboto Mono', monospace;
+    min-height: 100vh;
 }
 
 .app__title {
@@ -25,16 +26,28 @@ body {
 }
 
 .sublist__done {
-    background-color: lightseagreen;
+    background-color: springgreen;
 }
 
 #sublist-input {
     min-width: 75%;
     margin-bottom: 5px;
+    padding: 0.5rem;
+    border: 2px sandybrown solid;
+    background: white;
 }
 
 #sublist-button {
     margin-left: 5px;
+    color: #d88771;
+    background: white;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#sublist-checkbox {
+    background-color: steelblue;
 }
 
 .emergency {
@@ -47,7 +60,6 @@ body {
     max-width: 300px;
     margin: 0 auto;
     text-align: center;
-    border-right: #333 3px solid;
     background-color: ivory;
     padding: 100px 0px 100px 0px; 
 }
@@ -71,26 +83,79 @@ body {
     border: 2px solid;
     border-radius: 10px;
     font-family: fantasy;
+    color: #d88771;
+    background: white;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#add-button:hover {
+    background: #d88771;
+    color: white;
 }
 
 #add-input {
     min-width: 200px;
     border: 2px solid;
     border-radius: 10px;
-    font-family: monospace;
+    font-family: fantasy;
+}
+
+.list__listings {
+    margin: 0.5rem;
+    background-color: khaki;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.completed {
+    background-color: turquoise;
+    margin: 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .list__item {
-    width: 100%;
-    background-color: lawngreen;
-    font-family: monospace;
-    cursor: pointer;
-    padding: 5px;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid yellowgreen;
+    color: black;
+    text-decoration: none;
+    word-break: break-all;
 }
 
 #list-remove {
+    background: #ff6f47;
+    color: white;
+    border: none;
+    padding: 0.7rem;
     cursor: pointer;
+    font-size: 1rem;
 }
+
+/* Select Filter */
+
+select {
+    outline: none;
+    border: none;
+    color: #ff6f47;
+    cursor: pointer;
+    padding: 1rem;
+}
+
